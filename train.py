@@ -1,5 +1,8 @@
 from __future__ import division
 
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
+
 from models import *
 from utils.utils import *
 from utils.datasets import *
@@ -32,11 +35,15 @@ parser.add_argument("--n_cpu", type=int, default=0, help="number of cpu threads 
 parser.add_argument("--img_size", type=int, default=416, help="size of each image dimension")
 parser.add_argument("--checkpoint_interval", type=int, default=1, help="interval between saving model weights")
 parser.add_argument("--checkpoint_dir", type=str, default="checkpoints", help="directory where model checkpoints are saved")
-parser.add_argument("--use_cuda", type=bool, default=True, help="whether to use cuda if available")
+parser.add_argument("--use_cuda", type=int, default=0, help="use 0 for no GPU, 1 for the first and 2 for the second")
+
 opt = parser.parse_args()
 print(opt)
 
 cuda = torch.cuda.is_available() and opt.use_cuda
+if cuda:
+    torch.cuda.set_device(opt.use_cuda-1)
+    
 
 os.makedirs("checkpoints", exist_ok=True)
 
