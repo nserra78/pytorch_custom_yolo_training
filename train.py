@@ -34,7 +34,7 @@ parser.add_argument("--nms_thres", type=float, default=0.4, help="iou thresshold
 parser.add_argument("--n_cpu", type=int, default=0, help="number of cpu threads to use during batch generation")
 parser.add_argument("--img_size", type=int, default=416, help="size of each image dimension")
 parser.add_argument("--checkpoint_interval", type=int, default=1, help="interval between saving model weights")
-parser.add_argument("--checkpoint_dir", type=str, default="checkpoints", help="directory where model checkpoints are saved")
+parser.add_argument("--checkpoint_dir", type=str, default="$DATA/yolo_checkpoints", help="directory where model checkpoints are saved")
 parser.add_argument("--use_cuda", type=int, default=1, help="use 0 for no GPU, 1 for the first and 2 for the second")
 
 opt = parser.parse_args()
