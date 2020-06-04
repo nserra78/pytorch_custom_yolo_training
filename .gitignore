@@ -4,3 +4,4 @@ venv/
 __pycache__/
 checkpoints/
 .idea/
+log_file.txt
