@@ -1,3 +1,6 @@
+
+
+
 from __future__ import division
 
 import warnings
@@ -34,17 +37,15 @@ parser.add_argument("--class_path", type=str, default="config/barcodes.names", h
 parser.add_argument("--conf_thres", type=float, default=0.8, help="object confidence threshold")
 parser.add_argument("--nms_thres", type=float, default=0.4, help="iou thresshold for non-maximum suppression")
 parser.add_argument("--n_cpu", type=int, default=0, help="number of cpu threads to use during batch generation")
-parser.add_argument("--img_size", type=int, default=416, help="size of each image dimension")
+parser.add_argument("--img_size", type=int, default=600, help="size of each image dimension")
 parser.add_argument("--checkpoint_interval", type=int, default=1, help="interval between saving model weights")
 parser.add_argument("--checkpoint_dir", type=str, default="/disk/data12/lhcb/nserra/yolo_checkpoints", help="directory where model checkpoints are saved")
 parser.add_argument("--use_cuda", type=int, default=1, help="use 0 for no GPU, 1 for the first and 2 for the second")
 parser.add_argument("--log_file", type=str, default="log_file.txt", help="path to log file")
 
 
-
 #import warnings
 #warnings.filterwarnings("ignore", category=DeprecationWarning)
-
 
 
 opt = parser.parse_args()
