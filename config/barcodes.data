@@ -1,0 +1,6 @@
+classes=1
+train=data/barcodes/train.txt
+valid=data/barcodes/val.txt
+names=config/barcodes.names
+backup=backup/
+
